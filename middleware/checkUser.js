@@ -3,13 +3,14 @@ require('dotenv').config();
 const jwt = require('jsonwebtoken');
 const queryPromise = require("../models/database");
 
-
+// Ta fukncija preveri pravilnost JWT uporabnika
 const checkUser = (req, res, next) => {
     const token = req.cookies.jwt;
     
     if(token) {
         jwt.verify(token, process.env.SECRET_TOKEN, async (err, decodedToken) => {
-            if(err){ 
+        
+        if(err){ 
             console.log(err.message);
             res.locals.user = null;
             next();

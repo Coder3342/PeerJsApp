@@ -47,7 +47,7 @@ app.get('/room/:room', requireAuth, (req, res) =>{
 
 
 
-/*Connect to room*/
+// Tukaj se uporabnik poveže s peerjsom oz. z drugimi uporabniki
 io.on('connection', (socket) =>{
     socket.on('join-room', (roomId, userId) => {
        socket.join(roomId);

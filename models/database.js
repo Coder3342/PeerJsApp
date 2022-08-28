@@ -3,6 +3,7 @@ require('dotenv').config()
 const mysql = require('mysql');
 const util = require('util');
 
+// Implementacija modela MySQL podatkovne baze
 var pool  = mysql.createPool({
     host     : process.env.MYSQL_ADDON_HOST,
     user     : process.env.MYSQL_ADDON_USER,

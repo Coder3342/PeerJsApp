@@ -2,6 +2,8 @@ require('dotenv').config();
 
 const jwt = require('jsonwebtoken');
 
+// Ta fukncija preveri, če za določenega uporabnika že obstaja JWT.
+// Če obstaja, lahko brez prijave obišče stran, če pa ne pa ga preusmeri na login
 const requireAuth = (req, res, next) => {
 
     const token = req.cookies.jwt;

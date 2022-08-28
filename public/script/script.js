@@ -1,9 +1,11 @@
+// Implementacija Peerjsa
 
 const socket = io('/');
 const videoGrid = document.getElementById('video-grid');
 const myVideo = document.createElement('video');
 const peers = {};
 
+// Ko uporabnik ustvari sobo ali se ji pridruži, si tukaj pridobi svojo unikatno identiteto
 const myPeer = new Peer({ 
     
     host: "/" || location.hostname,

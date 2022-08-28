@@ -2,6 +2,7 @@ const { Router } = require('express');
 const router = Router();
 const controller = require('../controllers/controller');
 
+// Implementacija "poti" do posameznih spletnih strani
 
 /*Login*/
 router.get('/login', controller.login_get)
