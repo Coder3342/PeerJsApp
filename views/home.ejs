@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/home.css">
+    <title>Home</title>
+</head>
+<body>
+    <ul>
+        <img src="/style/logo.png" alt="">
+        <li><a id="profil" href="profile">Moj profil</a></li>
+        <li><a onclick="location.assign('/logout')">Odjava</a></li>
+        <li><a href="#contact">Kontakti</a></li>
+        <li><a href="#about">O spletni strani</a></li>
+      </ul>
+    <div id="main">
+        <h1 align="center">Welcome, <%= user.fname %></h1>
+        <a href='/room' target="_blank"><button id="btn">Create a room</button></a>
+    </div>
+</body>
+</html>

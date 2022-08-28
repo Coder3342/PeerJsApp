@@ -1,0 +1,203 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: myfont;
+    src: url(OpenSans-Light.ttf);
+}
+
+@font-face {
+    font-family: myfontbold;
+    src: url(OpenSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: myfontextrabold;
+    src: url(OpenSans-ExtraBold.ttf);
+}
+
+body{
+
+    background: #dff1ff;
+   
+}
+
+input{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+    font-family: myfont;
+    font-size: 1.3em;
+    height: 1.8em;
+
+}
+
+h1,h3{
+    font-family: myfont;
+}
+
+h1{
+    font-size:3em;
+    margin-top: 5%;
+}
+
+h2{
+    font-family: myfontbold;
+    font-size:2em;
+    display: inline;
+    margin-right: 1%;
+}
+
+h3{
+    font-size:1.4em;
+    margin-bottom: 3.5%;
+}
+
+#btn{
+    width: 50%;
+    color: white;
+    font-size: 2em;
+    background: #339DFF;
+    border: none;
+    margin-top: 33%;
+    margin-left: 26%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#btn:hover {
+    background: #fff;
+    color: #339DFF;
+    box-shadow: 0 4px 4px rgba(83, 100, 255, 0.32);
+    
+  }
+
+a{
+    margin-top: 10%;
+    text-decoration: none;
+    font-family: myfont;
+    font-size: 1.3em;
+    color: #0977F3;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #333;
+    height: 80px;
+    font-size: 2em;
+  }
+  
+  li {
+    display: inline;
+    float: right;
+    margin-right: 4%;
+    margin-top: 0.5%;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  img{
+    width:9%;
+    margin-top: -1%;
+  }
+  
+  #profil{
+    height:100%;
+    font-family: myfontbold;
+    font-weight: bold;
+  }
+
+  #main{
+    margin-top: 15%;
+  }
+
+  .inp{
+    margin-left: 45%;
+    margin-bottom: 2%;  
+  }
+
+  .inp2{
+    margin-left: 42%;
+    margin-bottom: 2%;  
+  }
+
+  .inp3{
+    margin-left: 34.5%;
+    margin-bottom: 2%;  
+  }
+
+  .inp4{
+    margin-left: 43.5%;
+    margin-bottom: 2%;  
+  }
+
+  .inp5{
+    margin-left: 43.5%;
+    margin-bottom: 2%;  
+  }
+
+  #in{
+    width: 30%;
+  }
+
+  #in2{
+    width: 29%;
+  }
+
+  #in3{
+    width: 25.5%;
+  }
+
+  #in4{
+    width: 29%;
+  }
+
+  #in5{
+    width: 30.5%;
+  }
+
+  
+
+  #btn{
+    width: 10%;
+    color: white;
+    font-size: 2em;
+    background: #339DFF;
+    border: none;
+    margin-top: 3%;
+    border-radius: 10px;
+    margin-left: 50%;
+}
+
+#btn:hover {
+    background: #fff;
+    color: #339DFF;
+    box-shadow: 0 4px 4px rgba(83, 100, 255, 0.32);
+    
+  }
+
+#form{
+    margin-top: 15%;
+    display: none;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    font-size: 1.1em;
+    opacity: 1; /* Firefox */
+  }
+
+  input:focus::placeholder {
+    color: transparent;
+  }
+

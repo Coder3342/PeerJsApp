@@ -1,0 +1,66 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: myfont;
+    src: url(OpenSans-Light.ttf);
+}
+
+@font-face {
+    font-family: myfontbold;
+    src: url(OpenSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: myfontextrabold;
+    src: url(OpenSans-ExtraBold.ttf);
+}
+
+body{
+
+    background: #dff1ff;
+   
+}
+
+h1{
+    font-family: myfontbold;
+    font-weight: bold;
+    margin-top: 2%;
+}
+
+
+  #btn{
+    width: 10%;
+    color: white;
+    font-size: 2em;
+    background: #339DFF;
+    border: none;
+    margin-top: 24%;
+    border-radius: 10px;
+    margin-left: 45%;
+}
+
+#btn:hover {
+    background: #fff;
+    color: #339DFF;
+    box-shadow: 0 4px 4px rgba(83, 100, 255, 0.32);
+    cursor: pointer;
+    
+  }
+
+
+
+#video-grid{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+video{
+    width: 20%;
+    height: 100%;
+    object-fit: cover;
+    margin-left: 4%;
+    margin-top: 2%;
+} 

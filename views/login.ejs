@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/style/login.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+</head>
+<body>
+    <h1>Stran za prijavo</h1>
+    <div id="main" class="" align="center">
+        <h2>Prijava</h2>
+
+    <form action="/login" method="POST">
+
+        <div id="err"></div>
+        
+        <div class="inp">   
+            <input id="usr" type="text" name="username" placeholder="Uporabnisko ime" class="username" >
+        </div>
+  
+
+        <div class="inp">
+            <input id="pass" type="password" name="password" placeholder="Geslo" class="password">
+        </div>
+        
+        <br>
+
+        <button id="btn" type="submit" name="submit" value="Submit">Prijavi se</button>
+        
+        <p><a href="register">Registrirajte se</a>
+      
+    </form>
+</div>
+
+<script>
+    const form = document.querySelector('form')
+
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const username = form.username.value;
+        const password = form.password.value;
+        
+        try{
+
+            const res = await fetch('/login', {
+                method: 'POST',
+                body: JSON.stringify({ username, password }),
+                headers: {'Content-Type': 'application/json'}
+            })
+
+            const data = await res.json();
+
+            if(data == -1){
+                document.getElementById('err').innerHTML = "Napačno uporabniško ime/geslo"
+                return;
+
+            }
+            
+            console.log("Success!")
+            location.assign('/')
+                
+
+    }
+
+    catch(err) {
+        throw err;
+    }
+
+})
+</script>
+</body>
+</html>

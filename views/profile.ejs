@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/profile.css">
+    <title>Home</title>
+</head>
+<body>
+    <ul>
+        <img src="/style/logo.png" alt="">
+        <li><a id="profil" href="#about">Moj profil</a></li>
+        <li><a href="#contact">Kontakti</a></li>
+        <li><a href="#about">O spletni strani</a></li>
+      </ul>
+    <div id="main">
+        
+        <div class="inp" >
+            <h2>Ime:</h2>
+            <input type="text" autocomplete="off" name="fname" id="in" placeholder="<%= user.fname[0].toUpperCase() + user.fname.substring(1)%>" disabled>
+        </div>
+        
+        <div class="inp2">
+            <h2>Priimek:</h2>
+            <input type="text" autocomplete="off" name="lname" id="in2" placeholder="<%= user.lname[0].toUpperCase() + user.lname.substring(1)%>" disabled>
+        </div>
+            
+        <div class="inp3">
+            <h2>Uporabniško ime:</h2>
+            <input type="text" autocomplete="off" name="username" id="in3" placeholder="<%= user.username %>" disabled>
+        </div>
+
+        <div class="inp4">
+            <h2>E-mail:</h2>
+            <input type="text" autocomplete="off" name="email" id="in4" placeholder="<%= user.email %>" disabled>
+        </div>
+
+        <button type="button" autocomplete="off" id="btn" onclick="change()">Uredi</button>
+    </div>
+
+    <div id="form">
+
+    <form action="" method="POST">     
+
+        <div class="inp" >
+            <h2>Ime:</h2>
+            <input type="text" autocomplete="off" name="fname" id="in" placeholder="<%= user.fname[0].toUpperCase() + user.fname.substring(1)%>"
+            placeholder="Ime" pattern="[a-zA-Z]{3,}" title="Vsebuje lahko samo črke">
+        </div>
+        
+        <div class="inp2">
+            <h2>Priimek:</h2>
+            <input type="text" autocomplete="off" name="lname" id="in2" placeholder="<%= user.lname[0].toUpperCase() + user.lname.substring(1)%>"
+            placeholder="Priimek" pattern="[a-zA-Z]{3,}" title="Vsebuje lahko samo črke">
+        </div>
+            
+        <div class="inp3">
+            <h2>Uporabniško ime:</h2>
+            <input type="text" autocomplete="off" name="username" id="in3" placeholder="<%= user.username %>"
+            minlength="6" maxlength="20" pattern="[a-zA-Z0-9]{6,}" title="Min. length is 6. Can only contain letters and numbers">
+        </div>
+
+        <div class="inp4">
+            <h2>E-mail:</h2>
+            <input type="email" autocomplete="off" name="email" id="in4" placeholder="<%= user.email %>"
+            placeholder="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+        </div>
+
+        <div class="inp5">
+            <h2>Geslo:</h2>
+            <input type="password" name="password" id="in5" placeholder="Geslo"
+            minlength="7" maxlength="20">
+        </div>
+
+        <button type="submit" id="btn" onclick="change()">Potrdi</button>
+    </form>
+    </div>
+
+    <script src="../script/profile.js"></script>
+</body>
+</html>

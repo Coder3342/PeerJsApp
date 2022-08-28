@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/style/register.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register page</title>
+    
+</head>
+<body>
+    <div id="main" align="center">
+        
+        <form id="form" action="" method="POST">
+        <div class="inp">
+
+            <h3>Ime</h3>
+            <input id="fname" type="text" name="fname" 
+                   placeholder="First name" pattern="[a-zA-Z]{1,}" title="Can only contain letters" required>
+           
+        </div>
+
+        <div class="inp">
+            <h3>Priimek</h3>
+            <input id="lname" type="text" name="lname" placeholder="Last name" 
+                       pattern="[a-zA-Z]{1,}" title="Can only contain letters" required>
+            <div class = "lname error"></div>
+        </div>
+
+        <div class="inp">
+            <h3>Uporabniško ime</h3>
+            <div id= "error_username"></div>
+            
+            <input type="text" name="usrname" placeholder="Username" minlength="6" 
+                   maxlength="20" pattern="[a-zA-Z0-9]{6,}" title="Min. length is 6. Can only contain letters and numbers" required>
+            <div class = "user error"></div>
+        </div>
+
+        <div class="inp">
+            <h3>E-mail</h3>
+            <input type="email" name="email" placeholder="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+            <div class = "email error"></div>
+        </div>
+
+        <div class="inp">
+            <h3>Datum rojstva</h3>
+            <input type="date" name="dat" placeholder="Datum rojstva" required>
+            <div class = "dat error"></div>
+        </div>
+
+        <div class="inp">
+            <h3>Geslo</h3>
+            <div id= "error_password"></div>
+            <input id="pass" type="password" name="pass" placeholder="Password" minlength="7" maxlength="20" required>
+        </div>
+
+        <div class="inp">
+            <h3>Ponovno geslo</h3>
+            <input id="repass" type="password" name="repass"  placeholder="Reenter password" minlength="7" maxlength="20" required>
+        </div>
+
+        
+        <button id="btn" type="submit" name="submit">Submit</button>
+    
+    </form>
+
+    </div>
+
+<script>
+
+    const form = document.querySelector('form')
+
+    form.addEventListener('submit', async(event) => {
+        event.preventDefault();
+
+        const fname = form.fname.value;
+        const lname = form.lname.value;
+        const username = form.usrname.value;
+        const email = form.email.value;
+        const dat = form.dat.value;
+        const password = form.pass.value;
+        const repass = form.repass.value;
+        
+        try{
+
+            const res = await fetch('/register', {
+                method: 'POST',
+                body: JSON.stringify({
+                    fname: fname,  
+                    lname: lname,    
+                    username: username,
+                    email: email,    
+                    dat: dat,  
+                    password: password,
+                    repass: repass 
+                }),
+                headers: {'Content-Type': 'application/json'}
+            })
+
+            const data = await res.json();
+            console.log(data)
+            if(data.error_username || data.error_password){
+                document.getElementById('error_username').innerHTML = data.error_username;
+                document.getElementById('error_password').innerHTML = data.error_password;
+                return
+            }
+            location.assign('/login')
+        
+        }
+
+        catch(err) {
+            console.log(err)
+        }
+
+    })
+</script>
+</body>
+</html>

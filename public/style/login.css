@@ -1,0 +1,102 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: myfont;
+    src: url(OpenSans-Light.ttf);
+}
+
+@font-face {
+    font-family: myfontbold;
+    src: url(OpenSans-Regular.ttf);
+}
+
+body{
+    background: #dff1ff;
+}
+
+input{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+    font-family: myfont;
+    font-size: 1.3em;
+    height: 1.8em;
+}
+
+h1,h3{
+    font-family: myfont;
+}
+
+h1{
+    font-size:3em;
+}
+
+h2{
+    font-family: myfontbold;
+    font-size:2em;
+}
+
+h3{
+    font-size:1.4em;
+    margin-bottom: 3.5%;
+}
+
+.inp{
+    margin-top:15%;
+}
+
+#btn{
+    width: 50%;
+    color: white;
+    font-size: 2em;
+    background: #339DFF;
+    border: none;
+    margin-top: 10%;
+    margin-bottom: 7%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#btn:hover {
+    background: #fff;
+    color: #339DFF;
+    box-shadow: 0 4px 4px rgba(83, 100, 255, 0.32);
+    
+  }
+
+a{
+    margin-top: 10%;
+    text-decoration: none;
+    font-family: myfont;
+    font-size: 1.3em;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+#main{
+    margin-top: 8%;
+    margin-left: 39%;
+    padding-top: 3%;
+    width:20%;
+    height:auto;
+    border-bottom: 1.5px solid grey;
+    /*
+    border-right:1px solid black;
+    border-left:1px solid black;
+    */
+    background: white;
+    padding-bottom: 3%;
+    box-shadow: 6px 6px #CDCDCD;
+}
+
+#err{
+    margin-top: 5%;
+    font-family: myfontbold;
+    font-size: 1.5em;
+    color: #ff0033;
+}
